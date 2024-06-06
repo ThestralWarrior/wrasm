@@ -8,6 +8,7 @@
 #include "form/generic.h"
 #include "form/atomic.h"
 #include "form/base.h"
+#include "form/muldiv.h"
 #include "macros.h"
 
 struct formation parse_form(const char *instruction)
@@ -20,6 +21,8 @@ struct formation parse_form(const char *instruction)
 		rv64i,
 		rv32a,
 		rv64a,
+		rv32m,
+		rv64m
 	};
 	for (size_t i = 0; i < ARRAY_LENGTH(sets); i++) {
 		while (sets[i]->name) {
